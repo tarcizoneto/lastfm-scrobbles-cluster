@@ -7,7 +7,6 @@ import os
 import requests
 import time
 import webbrowser
-import json
 
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
