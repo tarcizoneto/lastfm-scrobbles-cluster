@@ -102,8 +102,8 @@ def createDatabasefromTopTracks(network : pylast.LastFMNetwork): # criar um (tal
 
         
         if gatherPageIdx >= totalPages:
-            jsonloc.dumpJson('source/api/topTracks.json', database)
-            print('Done! Saved in source/api/toptracks.json','\nTracks gathered: ',len(database))
+            jsonloc.dumpJson('data/topTracks.json', database)
+            print('Done! Saved in data/toptracks.json','\nTracks gathered: ',len(database))
             break
         time.sleep(3) # just so you don't get banned :)
     
@@ -137,8 +137,8 @@ def createDatabasefromRecentTracks(network : pylast.LastFMNetwork, from_timestam
 
         
         if gatherPageIdx >= totalPages:
-            jsonloc.dumpJson('source/api/recentTracks.json', database)
-            print('Done! Saved in source/api/recenttracks.json','\nTracks gathered: ',len(database))
+            jsonloc.dumpJson('data/recentTracks.json', database)
+            print('Done! Saved in data/recenttracks.json','\nTracks gathered: ',len(database))
             break
         time.sleep(5) # just so you don't get banned :)
     

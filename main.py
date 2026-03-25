@@ -4,8 +4,8 @@ from utils import timestamploc
 
 import os
 
-TOPTRACKS_FILE = 'source/data/topTracks.json'
-RECENTTRACKS_FILE = 'source/data/recentTracks.json'
+TOPTRACKS_FILE = 'data/topTracks.json'
+RECENTTRACKS_FILE = 'data/recentTracks.json'
 GUIDE = input("Do you want for me to pause in every step? (y/n)...").strip().lower() == "y"
 
 network = lastfm.authenticate()
@@ -56,7 +56,7 @@ if GUIDE:
 
 
 print('\n\n\n\nDone!\nRescrobbled', len(rescrobbler.rescrobblefromList(scrobbleList, network)), 'times of', len(scrobbleList))
-input()
+input('Press Enter to close...')
 
 
 # NOTES
