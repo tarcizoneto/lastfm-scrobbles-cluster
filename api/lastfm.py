@@ -129,6 +129,8 @@ def createDatabasefromRecentTracks(network : pylast.LastFMNetwork, from_timestam
     totalPages = int(fGrab["recenttracks"]["@attr"]["totalPages"])
 
     for song in fGrab["recenttracks"]["track"]:
+        if not 'date' in song:
+                continue
         print('Appending: '+song['name'], song['date']['uts'])
         database.append({'name': song['name'], 'artist': song['artist']['#text'], 'mbid': song['mbid'], 'uts': int(song['date']['uts']), 'url': song['url']}) # recreating the dict with only necessary things from grab
 
@@ -139,6 +141,8 @@ def createDatabasefromRecentTracks(network : pylast.LastFMNetwork, from_timestam
         grab = requestMethodsfromHTTP("user.getRecentTracks", 1000,gatherPageIdx, from_timestamp)
 
         for song in grab["recenttracks"]["track"]:
+            if not 'date' in song:
+                continue
             print('Appending: '+song['name'], song['date']['uts'])
             # print({'name': song['name'], 'artist': song['artist']['name'], 'mbid': song['mbid'], 'playcount': song['playcount'], 'url': song['url']})
             database.append({'name': song['name'], 'artist': song['artist']['#text'], 'mbid': song['mbid'], 'uts': int(song['date']['uts']), 'url': song['url']})

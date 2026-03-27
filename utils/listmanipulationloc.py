@@ -63,8 +63,7 @@ def filterDuplicatedTracks(recentDatabase, topDatabase : dict, how='name'):
                         print('Duplicate already detected!\n')
                         continue
                     processedDatabaseDict.append(duplicateFiltering)
-                        
-                
+        
     
     return processedDatabaseDict
 

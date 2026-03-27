@@ -31,7 +31,6 @@ if not os.path.exists(RECENTTRACKS_FILE):
     recentdatabase = lastfm.createDatabasefromRecentTracks(network)
 else: # acknowledge the file creation datetime and grab recent tracks since its creation, that is, don't rescrobble tracks that were already "fixed"
     recentdatabase = lastfm.createDatabasefromRecentTracks(network, os.path.getmtime(RECENTTRACKS_FILE))
-    # recentdatabase = jsonloc.loadJson(RECENTTRACKS_FILE)
 
 
 if GUIDE:
@@ -46,6 +45,7 @@ if GUIDE:
 
 print('Creating scrobble list...')
 scrobbleList = listmanipulationloc.createScrobbleListfromDuplicatosandRecent(duplicatedDict, recentdatabase)
+
 
 # sorting scrobbles by their scrobble date and time, to try making a logically rescrobbling (older to new)
 # it is not really useful SOMETIMES, as for example, when the scrobbles are really old, because the date time is randomly generated
