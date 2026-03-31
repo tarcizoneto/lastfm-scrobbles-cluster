@@ -13,13 +13,10 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
-USERNAME = os.getenv('USERNAME')
+USERNAME = os.getenv('LASTUSERNAME')
 SESSION_KEY_FILE = os.path.join(os.path.expanduser("~"), ".session_key")
 
 
-print(API_KEY)
-print(API_SECRET)
-print(USERNAME)
 
 def authenticate():
     # we are authenticating here, this function exists to prepare pylast on correctly using lastfm's api
